@@ -1,0 +1,17 @@
+/Users/apple/Projects/JwtAuthServer/Repository/bin/Debug/net7.0/Repository.deps.json
+/Users/apple/Projects/JwtAuthServer/Repository/bin/Debug/net7.0/Repository.dll
+/Users/apple/Projects/JwtAuthServer/Repository/bin/Debug/net7.0/Repository.pdb
+/Users/apple/Projects/JwtAuthServer/Repository/bin/Debug/net7.0/Core.dll
+/Users/apple/Projects/JwtAuthServer/Repository/bin/Debug/net7.0/Shared.dll
+/Users/apple/Projects/JwtAuthServer/Repository/bin/Debug/net7.0/Core.pdb
+/Users/apple/Projects/JwtAuthServer/Repository/bin/Debug/net7.0/Shared.pdb
+/Users/apple/Projects/JwtAuthServer/Repository/obj/Debug/net7.0/Repository.csproj.AssemblyReference.cache
+/Users/apple/Projects/JwtAuthServer/Repository/obj/Debug/net7.0/Repository.GeneratedMSBuildEditorConfig.editorconfig
+/Users/apple/Projects/JwtAuthServer/Repository/obj/Debug/net7.0/Repository.AssemblyInfoInputs.cache
+/Users/apple/Projects/JwtAuthServer/Repository/obj/Debug/net7.0/Repository.AssemblyInfo.cs
+/Users/apple/Projects/JwtAuthServer/Repository/obj/Debug/net7.0/Repository.csproj.CoreCompileInputs.cache
+/Users/apple/Projects/JwtAuthServer/Repository/obj/Debug/net7.0/Repository.csproj.CopyComplete
+/Users/apple/Projects/JwtAuthServer/Repository/obj/Debug/net7.0/Repository.dll
+/Users/apple/Projects/JwtAuthServer/Repository/obj/Debug/net7.0/refint/Repository.dll
+/Users/apple/Projects/JwtAuthServer/Repository/obj/Debug/net7.0/Repository.pdb
+/Users/apple/Projects/JwtAuthServer/Repository/obj/Debug/net7.0/ref/Repository.dll
