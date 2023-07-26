@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "zKQtWNQTGhnMVpYps2mUrv69Yh523Tf8udkDNCdbiYaPOXFsay3PavxNwGauJ9X+7CA4C9BER5NoI12NYU8Hyg==",
+  "dgSpecHash": "fd9m2g1AFxXPwEksh3wNawDuVKMqQWdnQcpg965FrsGWXckJ+49JTmPnMpal67q/k+ERmVFg/FHej0ApkYtBvw==",
   "success": true,
   "projectFilePath": "/Users/apple/Projects/JwtAuthServer/Service/Service.csproj",
   "expectedPackageFiles": [
     "/Users/apple/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/apple/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "/Users/apple/.nuget/packages/fluentvalidation/11.5.1/fluentvalidation.11.5.1.nupkg.sha512",
+    "/Users/apple/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "/Users/apple/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.5.1/fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "/Users/apple/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/7.0.9/microsoft.aspnetcore.authentication.jwtbearer.7.0.9.nupkg.sha512",
     "/Users/apple/.nuget/packages/microsoft.aspnetcore.cryptography.internal/7.0.9/microsoft.aspnetcore.cryptography.internal.7.0.9.nupkg.sha512",
     "/Users/apple/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/7.0.9/microsoft.aspnetcore.cryptography.keyderivation.7.0.9.nupkg.sha512",

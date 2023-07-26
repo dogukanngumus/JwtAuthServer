@@ -91,3 +91,6 @@
 /Users/apple/Projects/JwtAuthServer/WebApi/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll
 /Users/apple/Projects/JwtAuthServer/WebApi/bin/Debug/net7.0/Mono.TextTemplating.dll
 /Users/apple/Projects/JwtAuthServer/WebApi/bin/Debug/net7.0/System.CodeDom.dll
+/Users/apple/Projects/JwtAuthServer/WebApi/bin/Debug/net7.0/FluentValidation.dll
+/Users/apple/Projects/JwtAuthServer/WebApi/bin/Debug/net7.0/FluentValidation.AspNetCore.dll
+/Users/apple/Projects/JwtAuthServer/WebApi/bin/Debug/net7.0/FluentValidation.DependencyInjectionExtensions.dll

@@ -6,6 +6,8 @@ using Core.Entities;
 using Core.Repositories;
 using Core.Services;
 using Core.UnitOfWork;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +17,9 @@ using Repository.Repositories;
 using Repository.UnitOfWork;
 using Shared.Configurations;
 using Service.Services;
+using Service.Validations;
 using Shared.Extensions;
+using WebApi.Filters;
 
 namespace WebApi;
 
@@ -32,7 +36,13 @@ public static class Startup
     
     private static void ConfigureServices(WebApplicationBuilder builder)
     {
-        builder.Services.AddControllers();
+        builder.Services.AddControllers(options =>
+        {
+            options.Filters.Add(new ValidationFilter());
+        }).ConfigureApiBehaviorOptions(options =>
+        {
+            options.SuppressModelStateInvalidFilter = true;
+        });
 
         builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
         builder.Services.AddScoped<IUserService, UserService>();
@@ -59,6 +69,9 @@ public static class Startup
         
         builder.Services.Configure<CustomTokenOptions>(builder.Configuration.GetSection("TokenOptions"));
         builder.Services.Configure<List<Client>>(builder.Configuration.GetSection("Clients"));
+
+        builder.Services.AddFluentValidationAutoValidation();
+        builder.Services.AddValidatorsFromAssemblyContaining<CreateUserValidation>();
         
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
