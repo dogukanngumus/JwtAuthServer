@@ -26,4 +26,11 @@ public class UserController:BaseController
     {
         return ActionResultInstance(await _userService.GetUserByName(HttpContext.User.Identity.Name));
     }
+
+    [Authorize]
+    [HttpPost("{userName}")]
+    public async Task<IActionResult> CreateUserRoles([FromRoute]string userName)
+    {
+        return ActionResultInstance(await _userService.CreateUserRoles(userName));
+    }
 }

@@ -33,10 +33,11 @@ public class TokenService : ITokenService
     {
         var signin = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_customTokenOptions.SecurityKey));
         var signinCredentials = new SigningCredentials(signin, SecurityAlgorithms.HmacSha256Signature);
+        var claims = CreateClaims(userApp, _customTokenOptions.Audiences).Result;
         JwtSecurityToken jwtSecurityToken = new JwtSecurityToken(
             issuer:_customTokenOptions.Issuer,
             expires: _accessTokenExpiration,
-            claims: CreateClaims(userApp,_customTokenOptions.Audiences),
+            claims: claims,
             signingCredentials:signinCredentials
             );
 
@@ -90,8 +91,9 @@ public class TokenService : ITokenService
         claims.AddRange(client.Audiences.Select(x=> new Claim(JwtRegisteredClaimNames.Aud,x)));
         return claims;
     }
-    private List<Claim> CreateClaims(UserApp userApp, List<string> audiences)
+    private async Task<List<Claim>> CreateClaims(UserApp userApp, List<string> audiences)
     {
+        var userRoles = await _userManager.GetRolesAsync(userApp);
         var claims = new List<Claim>()
         {
             new Claim(ClaimTypes.NameIdentifier, userApp.Id),
@@ -101,8 +103,10 @@ public class TokenService : ITokenService
         };
         
         claims.AddRange(audiences.Select(x=> new Claim(JwtRegisteredClaimNames.Aud,x)));
+        claims.AddRange(userRoles.Select(x=> new Claim(ClaimTypes.Role, x)));
         return claims;
     }
+    
     private string CreateRefreshToken()
     {
         var numberByte = new Byte[32];

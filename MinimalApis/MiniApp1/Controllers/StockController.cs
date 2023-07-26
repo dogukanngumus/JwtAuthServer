@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MiniApp1.Controllers;
 
-[Authorize]
+[Authorize(Roles = "admin,manager")]
 [Route("api/[controller]")]
 [ApiController]
 public class StockController : ControllerBase
