@@ -8,7 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<CustomTokenOptions>();
 builder.Services.AddCustomAuth(tokenOptions);
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("customPolicy", policy =>
+    {
+        policy.RequireClaim("customClaim","secretClaim");
+    });
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
