@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authorization;
+using MiniApp1.Requirements;
 using Shared.Configurations;
 using Shared.Extensions;
 
@@ -15,8 +17,13 @@ builder.Services.AddAuthorization(options =>
     {
         policy.RequireClaim("customClaim","secretClaim");
     });
+    
+    options.AddPolicy("agePolicy", policy =>
+    {
+        policy.Requirements.Add(new BirthDayRequirement(18));
+    });
 });
-
+builder.Services.AddScoped<IAuthorizationHandler, BirthDayRequirementHandler>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

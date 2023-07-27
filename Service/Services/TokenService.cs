@@ -101,6 +101,7 @@ public class TokenService : ITokenService
             new Claim(ClaimTypes.Name, userApp.UserName),
             new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
             new Claim("customClaim", "secretClaim"),
+            new Claim("birth-date",userApp.BirthDate.ToString())
         };
         
         claims.AddRange(audiences.Select(x=> new Claim(JwtRegisteredClaimNames.Aud,x)));
